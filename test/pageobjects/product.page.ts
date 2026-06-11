@@ -8,7 +8,9 @@ class ProductPage {
    * define selectors using getter methods
    */
   public get productsTitle() {
-    return $("//android.widget.TextView[@content-desc='title']");
+    return driver.isAndroid
+      ? $("//android.widget.TextView[@content-desc='title']")
+      : $("//XCUIElementTypeStaticText[@name='title']");
   }
 
   /**
