@@ -4,13 +4,12 @@
     "module": "ESNext",
     "target": "es2022",
     "lib": ["es2022", "dom"],
-    "types": [
-      "node",
-      "@wdio/globals/types",
-      "expect-webdriverio",
-      "@wdio/mocha-framework",
-      "@wdio/appium-service"
-    ],
+    "types": ["node", "@wdio/globals/types", "expect-webdriverio", "@wdio/mocha-framework", "@wdio/appium-service"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["tests/*"],
+      "@/pageObjects/*": ["tests/pageobjects/*"]
+    },
     "skipLibCheck": true,
     "noEmit": true,
     "allowImportingTsExtensions": true,
@@ -21,5 +20,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["test", "config/*.conf.ts"]
+  "include": ["tests", "config/*.conf.ts"]
 }

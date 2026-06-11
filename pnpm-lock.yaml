@@ -42,6 +42,9 @@ importers:
       expect-webdriverio:
         specifier: ^5.6.8
         version: 5.6.8(@wdio/globals@9.28.0)(@wdio/logger@9.18.0)(webdriverio@9.28.0)
+      prettier:
+        specifier: 3.8.4
+        version: 3.8.4
 
 packages:
 
@@ -2338,6 +2341,11 @@ packages:
   portscanner@2.2.0:
     resolution: {integrity: sha512-IFroCz/59Lqa2uBvzK3bKDbDDIEaAY8XJ1jFxcLWTqosrsc32//P4VuSB2vZXoHiHqOmx8B5L5hnKOxL/7FlPw==}
     engines: {node: '>=0.4', npm: '>=1.0.0'}
+
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   pretty-format@30.4.1:
     resolution: {integrity: sha512-K6KiKMHTL4jjX4u3Kir2EW07nRfcqVTXIImx50wbjHQTcZPgg+gjVeNTIT3l3L1Rd4UefxfogquC9J37SoFyyw==}
@@ -5604,6 +5612,8 @@ snapshots:
     dependencies:
       async: 2.6.4
       is-number-like: 1.0.8
+
+  prettier@3.8.4: {}
 
   pretty-format@30.4.1:
     dependencies:

@@ -4,8 +4,8 @@ export const config: Partial<WebdriverIO.Config> = {
   // Runner Configuration
   // ====================
   // WebdriverIO supports running e2e tests as well as unit and component tests.
-  runner: "local",
-  tsConfigPath: "../tsconfig.json",
+  runner: 'local',
+  tsConfigPath: '../tsconfig.json',
   port: 4723,
   //
   // ==================
@@ -22,7 +22,7 @@ export const config: Partial<WebdriverIO.Config> = {
   // The path of the spec files will be resolved relative from the directory of
   // of the config file unless it's absolute.
   //
-  specs: ["../test/specs/**/*.ts"],
+  specs: ['../tests/specs/**/*.ts'],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -45,7 +45,7 @@ export const config: Partial<WebdriverIO.Config> = {
   //
   maxInstances: 10,
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: "info",
+  logLevel: 'info',
   bail: 0,
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
@@ -53,23 +53,23 @@ export const config: Partial<WebdriverIO.Config> = {
   connectionRetryCount: 3,
   /* Test runner services */
   // services: ["appium"], // Instead, I use the Appium service from my terminal, globally installed
-  framework: "mocha",
+  framework: 'mocha',
   specFileRetries: 0,
   specFileRetriesDelay: 5,
   // Whether or not retried spec files should be retried immediately or deferred to the end of the queue
   // specFileRetriesDeferred: false,
   reporters: [
-    "spec",
+    'spec',
     [
-      "allure",
+      'allure',
       {
-        outputDir: "allure-results",
+        outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: true,
         addConsoleLogs: false,
         reportedEnvironmentVars: {
           NODE_VERSION: process.version,
-          ENV: "local",
+          ENV: 'local',
         },
       },
     ],
@@ -77,7 +77,7 @@ export const config: Partial<WebdriverIO.Config> = {
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {
-    ui: "bdd",
+    ui: 'bdd',
     timeout: 60000, // 60 seconds
   },
-};
+}
