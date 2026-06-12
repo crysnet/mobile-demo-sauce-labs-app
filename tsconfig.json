@@ -8,7 +8,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["tests/*"],
-      "@/pageObjects/*": ["tests/pageobjects/*"]
+      "@/pageObjects/*": ["tests/pageobjects/*"],
+      "@/support/*": ["support/*"]
     },
     "skipLibCheck": true,
     "noEmit": true,
@@ -20,5 +21,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["tests", "config/*.conf.ts"]
+  "include": ["tests", "config/*.conf.ts", "support/*.ts"]
 }
