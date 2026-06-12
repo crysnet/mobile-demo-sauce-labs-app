@@ -1,29 +1,35 @@
-import { getElementById } from '@/support/locator-strategy'
+import { getElementById, getElementByXPath } from '@/support/locator-strategy'
 
 class ProductDetailsScreen {
   /*  =========== Locators for Product Details feature =========== */
-  get productDetailPageTitle() {
-    return getElementById('productTV')
+  async getProductDetailPageTitle(title: string) {
+    return driver.isAndroid
+      ? getElementById('productTV')
+      : getElementByXPath(`//XCUIElementTypeStaticText[@name="${title}"]`)
   }
 
   get addToCartButton() {
-    return getElementById('cartBt')
+    return driver.isAndroid ? getElementById('cartBt') : getElementByXPath('//XCUIElementTypeButton[@name="AddToCart"]')
   }
 
-  get cartQuantity() {
-    return getElementById('cartTV')
+  async getCartQuantity(quantity: number) {
+    return driver.isAndroid
+      ? getElementById('cartTV')
+      : getElementByXPath(`//XCUIElementTypeStaticText[@name="${quantity}"]`)
   }
 
   get cartButton() {
-    return getElementById('cartRL')
+    return driver.isAndroid
+      ? getElementById('cartRL')
+      : getElementByXPath('//XCUIElementTypeButton[@name="Cart-tab-item"]')
   }
 
   /*  =========== Methods for Product Details feature =========== */
   async assertProductDetailPageTitleIsVisible(title: string) {
-    await expect(this.productDetailPageTitle).toBeDisplayed({
+    await expect(await this.getProductDetailPageTitle(title)).toBeDisplayed({
       wait: 5000,
     })
-    await expect(this.productDetailPageTitle).toHaveText(title)
+    await expect(await this.getProductDetailPageTitle(title)).toHaveText(title)
   }
 
   async clickAddToCartButton() {
@@ -31,8 +37,9 @@ class ProductDetailsScreen {
   }
 
   async assertCartQuantityIsCorrect(quantity: number) {
-    await expect(this.cartQuantity).toBeDisplayed()
-    await expect(this.cartQuantity).toHaveText(quantity.toString())
+    const cartQuantity = await this.getCartQuantity(quantity)
+    await expect(cartQuantity).toBeExisting()
+    await expect(cartQuantity).toHaveText(quantity.toString())
   }
 
   async openCart() {

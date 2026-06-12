@@ -16,7 +16,7 @@
   },
   "scripts": {
     "wdio:android": "wdio run ./config/wdio.android.conf.ts",
-    "wdio:ios": "wdio run ./config/wdio.ios.conf.ts"
+    "wdio:ios": "wdio run ./config/wdio.ios.conf.ts --mochaOpts.grep=\"@ios\""
   },
   "dependencies": {
     "allure-commandline": "^2.42.1"

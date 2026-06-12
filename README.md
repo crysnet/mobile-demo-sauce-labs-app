@@ -41,7 +41,7 @@ pnpm wdio:ios
 pnpm wdio:android --mochaOpts.grep="@products"
 
 # iOS - Run tests with tag @products
-pnpm wdio:ios --mochaOpts.grep="@products"
+pnpm wdio:ios -- --mochaOpts.grep="@products"
 ```
 
 ## View Allure report

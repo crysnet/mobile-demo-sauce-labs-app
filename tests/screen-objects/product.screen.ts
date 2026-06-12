@@ -1,4 +1,4 @@
-import { getElementByXPath, getElementsByXPath } from '@/support/locator-strategy'
+import { getElementByXPath, getElementsById, getElementsByXPath } from '@/support/locator-strategy'
 
 class ProductScreen {
   /*  =========== Locators for Product feature =========== */
@@ -13,7 +13,7 @@ class ProductScreen {
       ? getElementsByXPath(
           '//androidx.recyclerview.widget.RecyclerView[@content-desc="Displays all products of catalog"]/android.view.ViewGroup'
         )
-      : getElementsByXPath('')
+      : getElementsById('ProductItem')
   }
 
   /*  =========== Methods for Product feature =========== */
@@ -30,7 +30,9 @@ class ProductScreen {
    */
   async getProductLocatorFromListView(name: string) {
     const items = await this.productsList
-    const itemTitleLocator = driver.isAndroid ? '//android.widget.TextView[@content-desc="Product Title"]' : ''
+    const itemTitleLocator = driver.isAndroid
+      ? '//android.widget.TextView[@content-desc="Product Title"]'
+      : '//XCUIElementTypeStaticText[@name="Product Name"]'
 
     // Get the item from the list filtered by name
     for (const item of items) {

@@ -11,8 +11,8 @@ describe('Products Feature Tests - @products', function () {
     })
   })
 
-  it(`Verify User Can Add a Product to the Cart: @TC02 - ${platformName}`, async function () {
-    const productName = 'Sauce Labs Backpack'
+  it(`Verify User Can Add a Product to the Cart: @ios @TC02 - ${platformName}`, async function () {
+    const productName = driver.isAndroid ? 'Sauce Labs Backpack' : 'Sauce Labs Backpack - Black'
     await step(`Open product detail page for ${productName}`, async () => {
       await productScreen.openProductDetailPage(productName)
     })
