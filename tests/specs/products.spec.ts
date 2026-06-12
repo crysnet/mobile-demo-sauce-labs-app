@@ -1,6 +1,6 @@
 import { step } from '@wdio/allure-reporter'
-import { productScreen } from '@/screen-objects/product.screen'
-import { productDetailsScreen } from '@/screen-objects/product-details.screen'
+import { productScreen } from '@/screenObjects/product.screen'
+import { productDetailsScreen } from '@/screenObjects/product-details.screen'
 
 const platformName = driver.capabilities.platformName
 
