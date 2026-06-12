@@ -10,6 +10,7 @@ export const config = {
       'appium:platformVersion': '26.5',
       'appium:automationName': 'XCUITest',
       'appium:app': path.resolve(process.env.IOS_APP_PATH || ''),
+      'appium:bundleId': process.env.IOS_APP_BUNDLE_ID,
     },
   ],
 }

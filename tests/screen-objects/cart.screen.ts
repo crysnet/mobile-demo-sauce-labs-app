@@ -14,6 +14,18 @@ class CartScreen {
     return getElementByText('Proceed To Checkout')
   }
 
+  get removeItemButton() {
+    return getElementById('removeBt')
+  }
+
+  get noItemsScreenTitle() {
+    return getElementById('noItemTitleTV')
+  }
+
+  get goShoppingButton() {
+    return getElementById('shoppingBt')
+  }
+
   /*  =========== Methods for Cart feature =========== */
   async assertCartScreenIsVisible() {
     await expect(this.cartScreenTitle).toBeDisplayed({
@@ -23,6 +35,15 @@ class CartScreen {
 
   async clickCheckoutButton() {
     await this.checkoutButton.click()
+  }
+
+  async clickRemoveItemButton() {
+    await this.removeItemButton.click()
+  }
+
+  async assertNoItemsScreenIsVisible() {
+    await expect(this.noItemsScreenTitle).toBeDisplayed()
+    await expect(this.goShoppingButton).toBeDisplayed()
   }
 }
 export const cartScreen = new CartScreen()
