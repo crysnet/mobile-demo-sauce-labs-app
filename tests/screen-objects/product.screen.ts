@@ -1,6 +1,6 @@
 import { getElementByXPath, getElementsByXPath } from '@/support/locator-strategy'
 
-class ProductPage {
+class ProductScreen {
   /*  =========== Locators for Product feature =========== */
   get productsTitle() {
     return driver.isAndroid
@@ -49,4 +49,4 @@ class ProductPage {
   }
 }
 
-export default new ProductPage()
+export const productScreen = new ProductScreen()

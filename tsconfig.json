@@ -8,7 +8,7 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["tests/*"],
-      "@/pageObjects/*": ["tests/pageobjects/*"],
+      "@/screenObjects/*": ["tests/screen-objects/*"],
       "@/support/*": ["support/*"]
     },
     "skipLibCheck": true,

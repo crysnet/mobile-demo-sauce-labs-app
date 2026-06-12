@@ -1,6 +1,6 @@
 import { getElementById } from '@/support/locator-strategy'
 
-class ProductDetailsPage {
+class ProductDetailsScreen {
   /*  =========== Locators for Product Details feature =========== */
   get productDetailPageTitle() {
     return getElementById('productTV')
@@ -32,4 +32,4 @@ class ProductDetailsPage {
   }
 }
 
-export default new ProductDetailsPage()
+export const productDetailsScreen = new ProductDetailsScreen()
