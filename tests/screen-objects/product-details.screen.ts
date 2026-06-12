@@ -14,6 +14,10 @@ class ProductDetailsScreen {
     return getElementById('cartTV')
   }
 
+  get cartButton() {
+    return getElementById('cartRL')
+  }
+
   /*  =========== Methods for Product Details feature =========== */
   async assertProductDetailPageTitleIsVisible(title: string) {
     await expect(this.productDetailPageTitle).toBeDisplayed({
@@ -29,6 +33,10 @@ class ProductDetailsScreen {
   async assertCartQuantityIsCorrect(quantity: number) {
     await expect(this.cartQuantity).toBeDisplayed()
     await expect(this.cartQuantity).toHaveText(quantity.toString())
+  }
+
+  async openCart() {
+    await this.cartButton.click()
   }
 }
 

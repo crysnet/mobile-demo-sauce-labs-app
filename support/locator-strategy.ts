@@ -11,3 +11,7 @@ export const getElementByXPath = (xpath: string) => {
 export const getElementsByXPath = (xpath: string) => {
   return $$(xpath)
 }
+
+export const getElementByText = (text: string) => {
+  return driver.isAndroid ? $(`android=new UiSelector().text("${text}")`) : $(`[text="${text}"]`)
+}

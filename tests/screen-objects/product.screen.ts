@@ -36,7 +36,7 @@ class ProductScreen {
     for (const item of items) {
       const productTitleElement = item.$(itemTitleLocator)
       const text = await productTitleElement.getText()
-      if (text.includes(name)) {
+      if (text == name) {
         return item
       }
     }

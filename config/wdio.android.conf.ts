@@ -12,6 +12,8 @@ export const config: Partial<WebdriverIO.Config> = {
       'appium:app': path.resolve(process.env.ANDROID_APP_PATH || ''),
       'appium:appPackage': process.env.ANDROID_APP_PACKAGE,
       'appium:appWaitActivity': '*',
+      'appium:noReset': false,
+      'appium:fullReset': true,
     },
   ],
 }
